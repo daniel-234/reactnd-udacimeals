@@ -1,9 +1,13 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { addRecipe, removeFromCalendar } from '../actions';
 
 class App extends Component {
+  doThing = () => {
+    this.props.selectRecipe({});
+  }
   render() {
-    console.log(this.props)
+    console.log('Props', this.props);
     return (
       <div>
         Hello World
@@ -14,6 +18,7 @@ class App extends Component {
 
 function mapStateToProps(calendar) {
   const dayOrder = ['sunday', 'monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday']
+
   return {
     calendar: dayOrder.map((day) => ({
       day,
@@ -28,8 +33,13 @@ function mapStateToProps(calendar) {
   }
 }
 
+function mapDispatchToProps(dispatch) {
+  return {
+    selectRecipe: (data) => dispatch(addRecipe(data)),
+    remove: (data) => dispatch(removeFromCalendar(data))
+  }
+}
+
 // We are also invoking `connect`, which is going to return
 //  a brand new function, which we are going to pass a Component.
-export default connect(
-  mapStateToProps,
-)(App)
+export default connect(mapStateToProps, mapDispatchToProps)(App)
