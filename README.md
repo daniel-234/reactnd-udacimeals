@@ -8,6 +8,12 @@ Worked on it by following the teacher's step by step coding.
 To launch the application, (clone this repo and) download it locally, then install it with the command ```npm install``` and launch it with ```npm launch```.
 The Front-End server on your local machine should be accessible on *localhost: 3000*.
 
+## Edamam API Keys
+
+To see items displayed when you search meals or in the Shopping List window, you'll need to register with Edamam to get an API key for searching recipes.
+This is free and it is not a long process.
+If you want to do it, you can head to [Edamam website - Recipe Search API](https://developer.edamam.com/edamam-recipe-api).
+
 ## create-react-app
 
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app). You can find more information on how to perform common tasks [here](https://github.com/facebookincubator/create-react-app/blob/master/packages/react-scripts/template/README.md).
